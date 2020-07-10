@@ -1,0 +1,10 @@
+apiVersion: {{ .Values.apiversion }}
+kind: Subscription
+metadata:
+  name: jaeger-product
+spec:
+  channel: {{ .Values.elasticchannel }}
+  installPlanApproval: {{ .Values.installplanapproval }}
+  name: jaeger-product
+  source: {{ .Values.rhoperators }}
+  sourceNamespace: {{ .Values.srcnamespace }}"

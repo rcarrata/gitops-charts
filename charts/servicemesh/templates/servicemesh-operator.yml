@@ -1,0 +1,11 @@
+apiVersion: {{ .Values.apiversion }}
+kind: Subscription
+metadata:
+  name: servicemesh-operator
+spec:
+  channel: {{ .Values.meshchannel }}
+  installPlanApproval: {{ .Values.installplanapproval }}
+  name: servicemeshoperator
+  source: {{ .Values.rhoperators }}
+  sourceNamespace: {{ .Values.srcnamespace }}"
+

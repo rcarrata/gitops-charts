@@ -1,0 +1,30 @@
+# Default values for Service Mesh
+
+# Specs of Operators
+apiversion: "operators.coreos.com/v1alpha1"
+rhoperators: "redhat-operators"
+srcnamespace: "openshift-marketplace"
+installplanapproval: "Automatic"
+
+# Channel Operators
+meshchannel: "stable"
+elasticchannel: "4.4"
+jaegerchannel: "stable"
+kialichannel: "stable"
+
+# Mesh Control Plane
+meshctrlplanens: "istio-system"
+meshinstall:
+  controlPlaneSecurityEnabled: "true"
+  disablePolicyChecks: "false"
+  mtls: "true"
+  accessLogFile: "/dev/stdout"
+  rewriteAppHTTPProbe: "true"
+  kiali: "enabled"
+  grafana: "enabled"
+  tracing: "enabled"
+  jaegertemplate: "all-in-one"
+
+meshmemberroll:
+  - "istio-tutorial"
+  - "istio-test"

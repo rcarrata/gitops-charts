@@ -3,7 +3,7 @@ name: sonarqube
 description: SonarQube is an open sourced code quality scanning tool
 version: 0.0.4
 appVersion: "8.2-community"
-home: https://github.com/eformat/charts
+home: https://github.com/rcarrata/gitops-charts
 keywords:
   - coverage
   - security
@@ -11,4 +11,4 @@ keywords:
   - quality
 icon: https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg
 maintainers:
-  - name: eformat
+  - name: rcarrata

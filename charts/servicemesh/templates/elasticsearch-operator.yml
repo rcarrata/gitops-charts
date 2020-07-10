@@ -1,0 +1,10 @@
+apiVersion: {{ .Values.apiversion }}
+kind: Subscription
+metadata:
+  name: elasticsearch-operator
+spec:
+  channel: {{ .Values.elasticchannel }}
+  installPlanApproval: {{ .Values.installplanapproval }}
+  name: elasticsearch-operator
+  source: {{ .Values.rhoperators }}
+  sourceNamespace: {{ .Values.srcnamespace }}"
