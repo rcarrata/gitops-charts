@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "etherpad.fullname" . }}
+  name: {{ .Chart.Name }}
   labels:
     {{- include "etherpad.labels" . | nindent 4 }}
 spec:
@@ -64,7 +64,7 @@ spec:
       - name: etherpad-data
     {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ .Values.persistence.existingClaim | default (printf "%s" (include "etherpad.fullname" .)) }}
+          claimName: {{ .Values.persistence.existingClaim | default .Chart.Name }}
     {{- else }}
         emptyDir: {}
     {{- end }}

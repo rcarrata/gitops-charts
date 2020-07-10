@@ -26,7 +26,7 @@ ingress:
   annotations: {}
 
 route:
-  enabled: true
+  enabled: True
   host: null
   targetPort: http
 

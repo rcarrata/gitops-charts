@@ -1,25 +1,21 @@
 {{- if .Values.route.enabled -}}
-{{- $svcPort := .Values.service.port -}}
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   annotations:
     openshift.io/host.generated: "true"
-  name: {{ .Chart.Name }}
+  name: {{ .Values.appName }}
   labels:
-    {{- include "etherpad.labels" . | nindent 4 }}
+    app: {{ .Values.appName }}
 spec:
   host: {{ .Values.route.host | quote }}
   port:
     targetPort: {{ .Values.route.targetPort | default "8080-tcp" }}
   to:
     kind: Service
-    name: {{ .Chart.Name }}
+    name: {{ template "postgresql.fullname" .}}
     weight: 100
-  tls:
-    insecureEdgeTerminationPolicy: Redirect
-    termination: edge
 status:
   ingress:
     - conditions:

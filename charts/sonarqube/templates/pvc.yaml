@@ -2,9 +2,12 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ template "sonarqube.fullname" . }}
   labels:
-    {{- include "etherpad.labels" . | nindent 4 }}
+    app: {{ template "sonarqube.name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
 {{ if .Values.persistence.annotations}}
   annotations:
     {{- range $key, $value := .Values.persistence.annotations }}
