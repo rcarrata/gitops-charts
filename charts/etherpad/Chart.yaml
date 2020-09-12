@@ -1,9 +1,17 @@
+# v2 => Helm3, v1 => Helm2
 apiVersion: v2
+# The name of the chart.
 name: etherpad
+# A brief description of the chart.
 description: A Helm chart for etherpad lite
+# The type of the chart (either application or library).
 type: application
+# The version of the chart.
 version: 0.0.1
+# The version of the application being deployed.
 appVersion: latest
+# URL to the project homepage.
 home: https://github.com/rcarrata/gitops-charts
+# A list of name/email combinations of chart maintainers.
 maintainers:
   - name: rcarrata

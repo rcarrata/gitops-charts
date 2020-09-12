@@ -13,3 +13,9 @@ spec:
       name: http
   selector:
     {{- include "etherpad.selectorLabels" . | nindent 4 }}
+
+# .Values to access anything in the values
+# .Chart to access information about the chart (name, version, etc.)
+# toYaml, which will convert an object to its raw YAML representation
+# nindent, which ensures indentation level
+# include, which allows you to include YAML sections predefined in _helpers.tpl
